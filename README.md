@@ -1,2 +1,2 @@
-# bashprofile
-personal bash profile backup
+# mybashprofile
+My personal bash profile backup
