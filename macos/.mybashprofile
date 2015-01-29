@@ -1,0 +1,28 @@
+# PROMPT
+
+export PS1='\[\e]0;\w\a\]\n\[\e[32m\]\u@\h \[\e[33m\]\w\[\e[0m\]\n\$ '
+
+# ALIASES
+
+alias ..='cd ..'
+alias ...='cd ../../../'
+alias ....='cd ../../../../'
+alias .....='cd ../../../../'
+alias .4='cd ../../../../'
+alias .5='cd ../../../../..'
+alias cd..='cd ..'
+alias chgrp='chgrp --preserve-root'
+alias chmod='chmod --preserve-root'
+alias chown='chown --preserve-root'
+alias cp='cp -i'
+alias c='clear'
+
+# GLOBALS
+
+export EDITOR=vim
+export VISUAL=vim
+HISTCONTROL=ignoreboth
+
+# SETTINGS
+
+# FUNCTIONS
