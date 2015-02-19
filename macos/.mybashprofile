@@ -19,6 +19,7 @@ alias chmod='chmod --preserve-root'
 alias chown='chown --preserve-root'
 alias cp='cp -i'
 alias c='clear'
+alias findhereinfile=myfindhereinfile
 
 # GLOBALS
 
@@ -29,6 +30,13 @@ HISTCONTROL=ignoreboth
 # SETTINGS
 
 # FUNCTIONS
+myfindhereinfile() {
+	filename=$2
+	if [ "$filename" == "" ]; then
+		filename="*"
+	fi
+	find . -type f -name "$filename" | xargs grep -l -s "$1"
+}
 
 # INCLUDES
 INCLUDESDIR="$SELFDIR/../includes"
