@@ -1,0 +1,41 @@
+SELFDIR=$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )
+
+# PROMPT
+
+export PS1='\[\e]0;\w\a\]\n\[\e[32m\]\u \[\033[0m\]@ \[\033[1;31m\]\h \[\e[33m\]\w\[\e[0m\]\n\$ '
+
+# ALIASES
+
+alias ..='cd ..'
+alias ...='cd ../../../'
+alias ....='cd ../../../../'
+alias .....='cd ../../../../'
+alias .4='cd ../../../../'
+alias .5='cd ../../../../..'
+alias cd..='cd ..'
+alias chgrp='chgrp --preserve-root'
+alias chmod='chmod --preserve-root'
+alias chown='chown --preserve-root'
+alias cp='cp -i'
+alias c='clear'
+alias ll='ls -lha'
+
+# GLOBALS
+
+export EDITOR=vim
+export VISUAL=vim
+HISTCONTROL=ignoreboth
+
+# SETTINGS
+
+# FUNCTIONS
+
+memcpu() { echo "*** Top 10 cpu eating process ***"; ps auxf | sort -nr -k 3 | head -10;
+echo  -e "\n*** Top 10 memory eating process ***"; ps auxf | sort -nr -k 4 | head -10;  }
+
+# INCLUDES
+INCLUDESDIR="$SELFDIR/../includes"
+
+if [ -f "$INCLUDESDIR/wp-completion.bash" ]; then
+    source $INCLUDESDIR/wp-completion.bash
+fi
