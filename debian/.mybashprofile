@@ -19,6 +19,8 @@ alias chown='chown --preserve-root'
 alias cp='cp -i'
 alias c='clear'
 alias ll='ls -lha'
+alias svnrmall="svn status | grep '^\!' | sed 's/! *//' | xargs -I% svn rm %"
+alias svnaddall="svn status | grep '^\?' | sed 's/? *//' | xargs -I% svn add %"
 
 # GLOBALS
 
